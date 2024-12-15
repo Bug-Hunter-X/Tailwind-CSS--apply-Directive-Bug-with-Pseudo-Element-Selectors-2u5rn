@@ -1,0 +1,9 @@
+The solution is to avoid using the `@apply` directive for classes that contain pseudo-element selectors.  Apply these styles directly within the element's class declaration.
+
+```html
+<button class="hover:bg-blue-500 hover:before:content-[' ']">
+  Click Me
+</button>
+```
+
+This workaround applies the styles correctly, ensuring that the `::before` pseudo-element is properly styled when the button is hovered.
