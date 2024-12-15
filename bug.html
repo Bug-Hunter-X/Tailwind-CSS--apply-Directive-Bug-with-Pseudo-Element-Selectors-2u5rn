@@ -1,0 +1,9 @@
+This bug occurs when using Tailwind CSS's `@apply` directive with a class that contains a pseudo-element selector (like `::before` or `::after`).  The `@apply` directive doesn't correctly handle these selectors, leading to unexpected styles or no styles being applied at all.
+
+```html
+<button class="@apply hover:bg-blue-500 ::before:content-[' ']">
+  Click Me
+</button>
+```
+
+This example intends to add a `::before` pseudo-element to the button when hovered. However, due to this bug, the `::before` styles might not be applied.
